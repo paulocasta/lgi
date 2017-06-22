@@ -1,0 +1,24 @@
+$(document).ready(function(){
+	//Al apretar el boton tomar examen, se esconde ese contenedor y se comienza el examen.
+		$('#tomarExamen').click(function(){
+			$('#examenLayout').hide();
+	    	$('#matematica1').show();
+		});
+
+	 $('#nuevoExamen').hide();
+	 $('#materias').change("click",function(){
+	 		$('#nuevoExamen').show();
+	 		$('#preguntasPrecargadas').show();  
+	 });
+
+	 $('#agregarRespuesta').click(function(){
+		 	createTextfieldRespuesta();
+	 });
+	 function createTextfieldRespuesta(){
+		 return $('#tfRespuesta1').after("<div class=\"mdl-textfield mdl-js-textfield\"> <input class=\"mdl-textfield__input\" type=\"text\" id=\"nuevaRespuesta\"><label class=\"mdl-textfield__label\">Respuesta: </label>	</div>");
+	 }
+	 $('#agregarNuevoExamen').click(function(){
+	 	alert('Examen agregado');
+	 });
+	 
+});
